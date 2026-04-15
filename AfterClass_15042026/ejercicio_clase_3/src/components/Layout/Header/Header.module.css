@@ -1,0 +1,19 @@
+nav {
+  padding: 0.5rem 0;
+  background-color: aliceblue;
+  & ul{
+    display: flex;
+    justify-content: center;
+    & li{
+      padding: 0 1rem 0 0;
+      list-style: none;
+      & a{
+        text-decoration: none;
+        font-weight: bold;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
