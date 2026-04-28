@@ -1,5 +1,6 @@
 // Recibe las props usando destructuring
 import { useState, useEffect } from "react";
+import style from "./item.module.css"
 
 export function Item({ nombre, precio, stock, imagen }) {
   const [esFavorito, setEsFavorito] = useState(false);
@@ -31,7 +32,7 @@ export function Item({ nombre, precio, stock, imagen }) {
   }, [cartQty]);
 
   return (
-    <div>
+    <div className={style.card}>
       <h3>{nombre}</h3>
       <img src={imagen} alt="Imagen del producto" width={100}/>
       <p>Precio: ${precio}</p>
