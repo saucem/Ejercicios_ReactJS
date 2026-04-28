@@ -5,7 +5,7 @@ export function ItemList({ productos }) {
     <div style={{
       padding: "1rem, 0",
       display: "flex",
-      justifyContent: "end", 
+      justifyContent: "center", 
       gap: "30px"
       }}>
       {productos.map((prod) => (
