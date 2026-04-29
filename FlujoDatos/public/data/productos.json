@@ -4,20 +4,20 @@
     "nombre": "Notebook Pro",
     "precio": 1200000,
     "stock": 15,
-    "imagen": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08370144.png"
+    "imagen": "/images/notebook_pro.png"
   },
   {
     "id": "2344",
     "nombre": "Monitor Curvo",
     "precio": 450000,
     "stock": 25,
-    "imagen": "https://hkc-vn.com/wp-content/uploads/2024/01/ANT-27F272-011-scaled.jpg"
+    "imagen": "/images/monitor_curvo.jpg"
   },
   {
     "id": "2545",
     "nombre": "Teclado Mecánico",
     "precio": 150000,
     "stock": 50,
-    "imagen": "https://images.fravega.com/f1000/e0d9e9a71abf3525fc37d2f14f81c71f.jpg"
+    "imagen": "/images/teclado_mecanico.jpg"
   }
 ]
