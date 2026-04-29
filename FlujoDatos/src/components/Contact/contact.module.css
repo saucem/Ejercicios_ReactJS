@@ -1,8 +1,7 @@
 .profile {
   background-color: white;
   padding: 0.5rem 1rem;
-}
-
-img {
-  border-radius: 50%;
+  & img {
+    border-radius: 50%;
+  }
 }
