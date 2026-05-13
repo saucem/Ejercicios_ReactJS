@@ -4,20 +4,23 @@
     "nombre": "Notebook Pro",
     "precio": 1200000,
     "stock": 15,
-    "imagen": "/images/notebook_pro.png"
+    "imagen": "/images/notebook_pro.png",
+    "destacado": false
   },
   {
     "id": "2344",
     "nombre": "Monitor Curvo",
-    "precio": 450000,
+    "precio": 750000,
     "stock": 25,
-    "imagen": "/images/monitor_curvo.jpg"
+    "imagen": "/images/monitor_curvo.jpg",
+    "destacado": true
   },
   {
     "id": "2545",
     "nombre": "Teclado Mecánico",
     "precio": 150000,
     "stock": 50,
-    "imagen": "/images/teclado_mecanico.jpg"
+    "imagen": "/images/teclado_mecanico.jpg",
+    "destacado": false
   }
 ]

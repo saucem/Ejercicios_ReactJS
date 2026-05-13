@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ItemList } from "../ItemList/Itemlist";
 
-export function ItemListContainer({ Mensaje }) {
+export function ItemListContainer({ Mensaje, Destacados }) {
   // const productos = [
   //   { id: "1234", nombre: "Notebook Pro", precio: 12000, stock: 15 },
   //   { id: "2344", nombre: "Monitor Curvo", precio: 450000, stock: 25 },
@@ -33,10 +33,14 @@ export function ItemListContainer({ Mensaje }) {
       });
   }, []);
 
+  // Agregar acá los mensajes de carga y error
+
+  const productosAMostrar = Destacados ? productos.filter(prod => prod.destacado) : productos;
+
   return (
     <>
       <h2>{Mensaje}</h2>
-      <ItemList productos={productos} />
+      <ItemList productos={productosAMostrar} />
     </>
   );
 }
