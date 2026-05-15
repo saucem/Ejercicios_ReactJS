@@ -1,10 +1,13 @@
-import styles from "./Footer.module.css"
-
-function Footer () {
-  return (
-    <div className={styles.footer}>
-      <h5>Soy el Footer</h5>
-    </div>
+function Footer() {
+    return (
+    <footer style={ //Acá estamos inyectando JSX, entonces es necesario insertarlo entre llaves
+        {backgroundColor: "#8de2d6", //... y acá estamos pasando un objeto, por lo tanto también necesita expresarse entre llaves
+         padding: "10px",
+         /*textAlign: "center",*/
+         color: "white"}
+      }>
+      <h5>(C) Curso React 2026</h5>
+    </footer>
   );
 }
 

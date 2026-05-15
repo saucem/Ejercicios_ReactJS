@@ -1,13 +1,21 @@
-import Nav from "../Nav/Nav.jsx"
 import styles from "./Header.module.css"
 
-function Header () {
-  const menuitems = ["Inicio", "Productos", "Nosotros", "Contacto", "Carrito"]
+function Header() {
   return (
-    <div className={styles.header}>
-      <Nav items={menuitems}></Nav>
-    </div>
+    // <header style={ //Acá estamos inyectando JSX, entonces es necesario insertarlo entre llaves
+    //     {backgroundColor: "#8de2d6", //... y acá estamos pasando un objeto, por lo tanto también necesita expresarse entre llaves
+    //      padding: "10px",
+    //      textAlign: "center",
+    //      color: "white"}
+    //   }>
+    //   <h1>App React</h1>
+    // </header>
+    
+    //Acá reemplazamos los estilos en línea por los estilos importados
+    <header className={styles.header}>
+      <h1>App React</h1>
+    </header>    
   );
 }
 
-export default Header
+export default Header;
