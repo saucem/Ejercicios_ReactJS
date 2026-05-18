@@ -1,30 +1,23 @@
 [
   {
     "id": 1,
-    "nombre": "Ana López",
-    "email": "ana@mail.com",
+    "nombre": "Héctor López",
+    "email": "hlopez@woodwork.com",
     "puesto": "CEO",
-    "foto": "/images/mujer_02.jpg"
+    "foto": "/images/staff/ceo.jpg"
   },
   {
     "id": 2,
-    "nombre": "Juan Pérez",
-    "email": "juan@mail.com",
-    "puesto": "CTO",
-    "foto": "/images/hombre_02.jpg"
+    "nombre": "Ana Steimberg",
+    "email": "asteimberg@woodwork.com",
+    "puesto": "Diseñadora",
+    "foto": "/images/staff/designer.jpg"
   },
   {
     "id": 3,
-    "nombre": "Lucía Gómez",
-    "email": "lucia@mail.com",
-    "puesto": "UX Designer",
-    "foto": "/images/mujer_01.jpg"
-  },
-  {
-    "id": 4,
-    "nombre": "Carlos Ruiz",
-    "email": "carlos@mail.com",
-    "puesto": "Frontend Dev",
-    "foto": "/images/hombre_01.jpg"
+    "nombre": "Santiago Pérsico",
+    "email": "spersico@woodwork.com",
+    "puesto": "Ebanista",
+    "foto": "/images/staff/carpenter.jpg"
   }
 ]

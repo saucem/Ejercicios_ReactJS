@@ -1,19 +1,30 @@
 import styles from "./Header.module.css"
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    // <header style={ //Acá estamos inyectando JSX, entonces es necesario insertarlo entre llaves
-    //     {backgroundColor: "#8de2d6", //... y acá estamos pasando un objeto, por lo tanto también necesita expresarse entre llaves
-    //      padding: "10px",
-    //      textAlign: "center",
-    //      color: "white"}
-    //   }>
-    //   <h1>App React</h1>
-    // </header>
-    
-    //Acá reemplazamos los estilos en línea por los estilos importados
     <header className={styles.header}>
-      <h1>App React</h1>
+      <nav className={styles.nav}>
+        <div className={styles.navbrand}>
+          <span>
+            <img src="../images/icons/woodwork_logo_black.svg" alt="Logo WoodWork" width={"48"} />
+            WoodWork
+          </span>
+        </div>
+        <div className={styles.navbar}>
+          <ul>
+            <li><Link className={styles.navlink} to={"/"}>Inicio</Link></li>
+            <li><Link className={styles.navlink} to={"/productos"}>Productos</Link></li>
+            <li><Link className={styles.navlink} to={"/destacados"}>Destacados</Link></li>
+            <li><Link className={styles.navlink} to={"/nosotros"}>Nosotros</Link></li>
+            <li><Link className={styles.navlink} to={"/contacto"}>Contacto</Link></li>
+          </ul>
+        </div>
+        <div className={styles.navtrail}>
+          <img src="../images/icons/shopping_cart_32dp.svg" alt="Imagen de un carrito de compras" width={"32"} />
+        </div>
+
+      </nav>      
     </header>    
   );
 }

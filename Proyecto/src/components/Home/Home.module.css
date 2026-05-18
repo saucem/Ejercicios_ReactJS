@@ -1,0 +1,20 @@
+.hero{
+  color: white;
+  background-image: url("/images/hero.jpg");
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  padding-left: 1rem;
+  & h1{
+    font-size: 5rem;
+    line-height: normal;
+  }
+  & h2{
+    font-size: 2rem;
+    max-width: 50%;
+  }
+}
+

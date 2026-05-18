@@ -10,8 +10,9 @@ import { ProductFormContainer } from './components/ProductForm/ProductFormContai
 function App() {
   return (
     <Routes>
-      <Route element={<Layout children={ <p>Este texto pasado como children del Layout se va a repetir siempre</p> } />}>
+      <Route element={<Layout />}>
         <Route path="/" element={<Home />}></Route>
+        <Route path='/nosotros' element={<Directory/>}></Route>
         <Route path="/destacados" element={<ItemListContainer Mensaje={"Productos Destacados"} Destacados={true}/>}></Route>
         <Route path="/altaproducto" element={<ProductFormContainer />}></Route>
       </Route>
