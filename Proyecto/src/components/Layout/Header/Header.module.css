@@ -2,62 +2,6 @@
   padding: 10px;
   text-align: center;
   color:white;
-  position: sticky;
-  top: 0;
-}
-
-.nav{
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  & img {
-    vertical-align: text-bottom;
-    margin-right: 0.5rem;
-    filter: invert(100);
-  }
-}
-
-.navbar{
-  flex-grow: 1;
-  & ul{
-    display: flex;
-    justify-content: center;
-  }
-  & li{
-    list-style: none;
-    padding: 0 1rem;
-  }
-}
-
-.navbrand,
-.navbar,
-.navtrail{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-.navnrand,
-.navtrail{
-  width: 20%;
-}
-
-.navbrand{
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 0 1rem;
-}
-
-.navtrail{
-  align-items: end;
-}
-
-.navlink{
-  text-decoration: none;
-  color: white;
-  &:hover{
-    border-bottom: 2px solid white;
-  }
+  /* position: sticky;
+  top: 0; */
 }

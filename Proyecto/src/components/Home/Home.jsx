@@ -5,10 +5,12 @@ function Home() {
   return (
     <>
       <div className={styles.hero}>
-        <h1>Carpintería orgánica</h1>
-        <h2>
-          Brindamos valor humano al diseño funcional 
-        </h2>      
+        <span className={styles.heroTitle}>
+          Combinando el toque humano con el diseño funcional 
+        </span>
+        <span className={styles.heroSubtitle}>
+          Productos de madera natural proveniente de bosques reforestados que se integran orgánicamente en tu hogar
+        </span>      
       </div>
     </>
   );

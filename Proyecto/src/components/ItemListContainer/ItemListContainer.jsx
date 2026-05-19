@@ -1,13 +1,8 @@
 import { useState, useEffect } from "react";
 import { ItemList } from "../ItemList/Itemlist";
+import styles from "../ItemListContainer/ItemListContainer.module.css"
 
 export function ItemListContainer({ Mensaje, Destacados }) {
-  // const productos = [
-  //   { id: "1234", nombre: "Notebook Pro", precio: 12000, stock: 15 },
-  //   { id: "2344", nombre: "Monitor Curvo", precio: 450000, stock: 25 },
-  //   { id: "2545", nombre: "Teclado Mecánico", precio: 15000, stock: 50 },
-  // ];
-
   const [productos, setProductos] = useState([]);
   const [error, setError] = useState(null);
   const [cargando, setCargando] = useState(true);
@@ -39,8 +34,10 @@ export function ItemListContainer({ Mensaje, Destacados }) {
 
   return (
     <>
-      <h2>{Mensaje}</h2>
-      <ItemList productos={productosAMostrar} />
+      <div className={styles.container}>
+        <h2>{Mensaje}</h2>
+        <ItemList productos={productosAMostrar} />
+      </div>
     </>
   );
 }

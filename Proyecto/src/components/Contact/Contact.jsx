@@ -1,14 +1,13 @@
-// Recibe las props usando destructuring
-import { useState, useEffect } from "react";
-import style from "./contact.module.css"
+import styles from "./Contact.module.css"
 
 export function Contact({ nombre, email, puesto, foto }) {
   return (
-    <div className={style.profile}>
+    <div className={styles.profile}>
       <img src={foto} alt="Foto de perfil" width={100}/>
-      <h3>{nombre}</h3>
-      <p>Email: {email}</p>
-      <p>{puesto}</p>
+      <h4>{nombre}</h4>
+      <p><strong>{puesto}</strong></p>
+      <p>{email}</p>
+
     </div>
   );
 }

@@ -1,7 +1,12 @@
+p {
+  font-size: small;
+  line-height: 1rem;
+}
+
 .profile {
-  background-color: white;
   padding: 0.5rem 1rem;
   & img {
     border-radius: 50%;
   }
 }
+

@@ -11,10 +11,11 @@ function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<Home />}></Route>
-        <Route path='/nosotros' element={<Directory/>}></Route>
-        <Route path="/destacados" element={<ItemListContainer Mensaje={"Productos Destacados"} Destacados={true}/>}></Route>
-        <Route path="/altaproducto" element={<ProductFormContainer />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path='/nosotros' element={<Directory/>} />
+        <Route path='/productos' element={<ItemListContainer Mensaje={"Catálogo"} Destacados={false} />} />
+        <Route path="/destacados" element={<ItemListContainer Mensaje={"Productos Destacados"} Destacados={true}/>} />
+        <Route path="/altaproducto" element={<ProductFormContainer />} />
       </Route>
     </Routes>
   );
