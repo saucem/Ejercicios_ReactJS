@@ -115,6 +115,5 @@ button{
   &:hover{
     border-color: transparent;
     background-color: orange;
-
   }
 }

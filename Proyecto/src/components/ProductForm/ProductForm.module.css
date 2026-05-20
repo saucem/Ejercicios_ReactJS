@@ -1,0 +1,65 @@
+h2{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+input{
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid silver;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+button{
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+  color: #222;
+  border-radius: 8px;
+  border: 2px solid orange;
+  background-color: transparent;
+  &:hover{
+    color: white;
+    border-color: transparent;
+    background-color: orange;
+  }
+}
+
+.inputGroup{
+  display: flex;
+  flex-direction: column;
+  & label{
+    font-size: small;
+    margin-bottom: 0.15rem;
+  }
+}
+
+.sectionTitle,
+.sectionContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionTitle{
+  height: 45dvh;
+  background-image: url("/images/dark_warehouse.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.sectionContent{
+  min-height: 45dvh;
+}
+
+.productForm {
+  padding: 1rem;
+  border-radius: 16px;
+  color: #222;
+  background-color: #F5F4EF;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  row-gap: 16px;
+}

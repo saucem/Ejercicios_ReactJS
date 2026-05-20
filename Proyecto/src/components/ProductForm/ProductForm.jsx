@@ -1,47 +1,55 @@
 import React from "react"
+import styles from "./ProductForm.module.css"
 
 export function ProductForm({ datosForm, manejarCambio, manejarCambioImagen, manejarEnvio}) {
   return (
-    <form onSubmit={manejarEnvio}>
-      <h3>Agregar nuevo producto</h3>
-      <div>
-        <label>Nombre del producto:</label>
-        <input
-          type="text" 
-          placeholder="Ej.: Teclado mecánico"
-          name="nombre"
-          value={datosForm.nombre}
-          onChange={manejarCambio}
-        />
+    <>
+      <div className={styles.sectionTitle}>
+        <h1>Control de stock</h1>
       </div>
-      <div>
-        <label>Precio:</label>
-        <input 
-          type="number"
-          placeholder="Ej. 95"
-          name="precio"
-          value={datosForm.precio}
-          onChange={manejarCambio}
-        />
+      <div className={styles.sectionContent}>
+        <form onSubmit={manejarEnvio} className={styles.productForm}>
+          <h2>Agregar nuevo producto</h2>
+          <div className={styles.inputGroup}>
+            <label>Nombre del producto:</label>
+            <input
+              type="text" 
+              placeholder="Ej.: Teclado mecánico"
+              name="nombre"
+              value={datosForm.nombre}
+              onChange={manejarCambio}
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label>Precio:</label>
+            <input 
+              type="number"
+              placeholder="Ej. 95"
+              name="precio"
+              value={datosForm.precio}
+              onChange={manejarCambio}
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label>Stock:</label>
+            <input
+              type="number"
+              placeholder="Ej. 5"
+              name="stock"
+              value={datosForm.stock}
+              onChange={manejarCambio}
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label>Imagen del producto</label>
+            <input 
+              type="file"
+              onChange={manejarCambioImagen}
+            />
+          </div>
+          <button type="submit">Guardar Producto</button>
+        </form>
       </div>
-      <div>
-        <label>Stock:</label>
-        <input
-          type="number"
-          placeholder="Ej. 5"
-          name="stock"
-          value={datosForm.stock}
-          onChange={manejarCambio}
-        />
-      </div>
-      <div>
-        <label>Imagen del producto</label>
-        <input 
-          type="file"
-          onChange={manejarCambioImagen}
-        />
-      </div>
-      <button type="submit">Guardar Producto</button>
-    </form>
+    </>
   )
 }

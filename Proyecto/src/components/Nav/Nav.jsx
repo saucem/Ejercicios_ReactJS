@@ -21,7 +21,12 @@ export function Nav() {
           </ul>
         </div>
         <div className={styles.navtrail}>
-          <img src="../images/icons/shopping_cart_32dp.svg" alt="Imagen de un carrito de compras" width={"32"} />
+          <div className={styles.navbar}>
+            <ul>
+              <li><Link className={styles.navlink} to={"/altaproducto"}>Stock</Link></li>
+              <li><Link className={styles.navlink} to={"/carrito"}><img src="../images/icons/shopping_cart_32dp.svg" alt="Imagen de un carrito de compras" width={"32"} /></Link></li>
+            </ul>
+          </div>
         </div>
       </nav>      
     </>
