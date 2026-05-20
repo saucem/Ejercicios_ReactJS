@@ -17,7 +17,6 @@ export function Nav() {
             <li><Link className={styles.navlink} to={"/"}>Inicio</Link></li>
             <li><Link className={styles.navlink} to={"/productos"}>Productos</Link></li>
             <li><Link className={styles.navlink} to={"/destacados"}>Destacados</Link></li>
-            <li><Link className={styles.navlink} to={"/nosotros"}>Nosotros</Link></li>
             <li><Link className={styles.navlink} to={"/contacto"}>Contacto</Link></li>
           </ul>
         </div>

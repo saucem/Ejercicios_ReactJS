@@ -1,26 +1,58 @@
 [
   {
     "id": "1234",
-    "nombre": "Notebook Pro",
-    "precio": 1200000,
+    "nombre": "Base para ollas",
+    "precio": 35000,
     "stock": 15,
-    "imagen": "/images/notebook_pro.png",
+    "imagen": "/images/products/pot_base.jpg",
     "destacado": false
   },
   {
     "id": "2344",
-    "nombre": "Monitor Curvo",
-    "precio": 750000,
+    "nombre": "Tabla para picadas",
+    "precio": 45000,
     "stock": 25,
-    "imagen": "/images/monitor_curvo.jpg",
+    "imagen": "/images/products/wooden_tray.jpg",
     "destacado": true
   },
   {
     "id": "2545",
-    "nombre": "Teclado Mecánico",
-    "precio": 150000,
+    "nombre": "Set huevera x 2u",
+    "precio": 15000,
     "stock": 50,
-    "imagen": "/images/teclado_mecanico.jpg",
+    "imagen": "/images/products/egg_holder.jpg",
     "destacado": false
+  },
+  {
+    "id": "2547",
+    "nombre": "Portacuchillos mediano",
+    "precio": 38000,
+    "stock": 13,
+    "imagen": "/images/products/knives_holder.jpg",
+    "destacado": false
+  },
+  {
+    "id": "1380",
+    "nombre": "Platos para mascotas",
+    "precio": 42000,
+    "stock": 8,
+    "imagen": "/images/products/pet_feeder.jpg",
+    "destacado": false
+  },
+  {
+    "id": "1788",
+    "nombre": "Portamacetas Deco",
+    "precio": 31000,
+    "stock": 3,
+    "imagen": "/images/products/wooden_planter_riser.jpg",
+    "destacado": true
+  },
+  {
+    "id": "1001",
+    "nombre": "Lámpara Estudio",
+    "precio": 85000,
+    "stock": 12,
+    "imagen": "/images/products/wooden_lamp.jpg",
+    "destacado": true
   }
 ]

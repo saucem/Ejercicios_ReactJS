@@ -13,7 +13,7 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path='/nosotros' element={<Directory/>} />
-        <Route path='/productos' element={<ItemListContainer Mensaje={"Catálogo"} Destacados={false} />} />
+        <Route path='/productos' element={<ItemListContainer Mensaje={"Productos"} Destacados={false} />} />
         <Route path="/destacados" element={<ItemListContainer Mensaje={"Productos Destacados"} Destacados={true}/>} />
         <Route path="/altaproducto" element={<ProductFormContainer />} />
       </Route>

@@ -1,6 +1,5 @@
-// Recibe las props usando destructuring
 import { useState, useEffect } from "react";
-import style from "./item.module.css"
+import styles from "./Item.module.css"
 
 export function Item({ nombre, precio, stock, imagen }) {
   const [esFavorito, setEsFavorito] = useState(false);
@@ -27,30 +26,42 @@ export function Item({ nombre, precio, stock, imagen }) {
     setEsFavorito(!esFavorito);
   };
 
-  useEffect(() => {
-    console.log("El componente se renderizó o cambió.");
-  }, [cartQty]);
+  const price = new Intl.NumberFormat('es-Latn');
 
   return (
-    <div className={style.card}>
-      <h3>{nombre}</h3>
-      <img src={imagen} alt="Imagen del producto" width={100}/>
-      <p>Precio: ${precio}</p>
-      <p>Stock disponible: {stock}</p>
-      <button className="btnQty" onClick={SubstractItem}>
-        -
-      </button>
-      <span className="lblQty">{cartQty}</span>
-      <button className="btnQty" onClick={AddItem}>
-        +
-      </button>
-      <button onClick={AgregarCarrito}>Comprar</button>
+    <div className={styles.card}>
       <span
-        style={{ marginLeft: "10px", cursor: "pointer" }}
-        onClick={marcarComoFavorito}
-      >
-        {esFavorito ? "⭐" : "☆"}
+        className={styles.iconFav}
+        onClick={marcarComoFavorito}>
+        {esFavorito ? 
+          <img src="/images/icons/favorite_24dp_filled.svg" alt="Ícono Favorito deseleccionado"></img> :
+          <img src="/images/icons/favorite_24dp_outline.svg" alt="Ícono Favorito seleccionado"></img>
+        }
       </span>
+      <div className={styles.cardHeader}>
+        <img src={imagen} alt="Imagen del producto"/>
+      </div>
+      <div className={styles.cardBody}>
+        <h3>{nombre}</h3>
+        <p>Disponible: {stock} unidades</p>
+        <p className={styles.productPrice}>${price.format(precio)}</p>
+      </div>
+      <div className={styles.cardFooter}>
+        <span className={styles.qtyField}>
+          <button className={styles.btnQty} onClick={SubstractItem}>
+            -
+          </button>
+          <span className={styles.lblQty}>{cartQty.toLocaleString('de-DE')}</span>
+          <button className={styles.btnQty} onClick={AddItem}>
+            +
+          </button>
+        </span>
+        <button
+          onClick={AgregarCarrito}
+          className={styles.cardSubmit}>
+            Comprar
+        </button>
+      </div>
     </div>
   );
 }
