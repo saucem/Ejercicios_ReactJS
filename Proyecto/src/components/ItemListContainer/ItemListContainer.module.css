@@ -20,7 +20,7 @@
   width: 100%;
   min-height: 45dvh;
   padding: 2rem;
-  background-color: #F5F4EF;
+  background-color: var(--light-bg);
   display: flex;
   justify-content: center;
   align-items: start;

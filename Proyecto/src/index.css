@@ -1,4 +1,8 @@
 :root {
+  --light-bg: #F5F4EF;
+  --dark-bg: #222;
+  --accent: #ffa500;
+  --accent-dark: #ff6600;
   font-family: "Google Sans", "Segoe UI", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -55,4 +59,30 @@ h2 {
 
 p {
   margin: 0;
+}
+
+.btn {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  &.btn-solid {
+    color: white;
+    background-color: var(--accent);
+    border: 2px solid transparent;
+    &:hover {
+      background-color: var(--accent-dark);
+    }
+  }
+  &.btn-outline {
+    /* color: #222; */
+    color: var(--accent);
+    background-color: transparent;
+    border: 2px solid var(--accent);
+    &:hover {
+      color: white;
+      background-color: var(--accent);
+    }
+  }
 }

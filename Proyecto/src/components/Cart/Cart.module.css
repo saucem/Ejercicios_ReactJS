@@ -1,0 +1,23 @@
+.sectionTitle,
+.sectionContent{
+  min-height: 45dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionTitle{
+  background-image: url("/images/empty_cart.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.sectionContent{
+  flex-direction: column;
+  color: var(--dark-bg);
+  background-color: var(--light-bg);
+  & p{
+    margin-bottom: 1rem;
+  }
+}

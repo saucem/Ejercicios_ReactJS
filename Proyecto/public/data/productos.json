@@ -5,7 +5,8 @@
     "precio": 35000,
     "stock": 15,
     "imagen": "/images/products/pot_base.jpg",
-    "destacado": false
+    "destacado": false,
+    "detalle": "Base reversible para apoyar ollas calientes"
   },
   {
     "id": "2344",
@@ -13,7 +14,8 @@
     "precio": 45000,
     "stock": 25,
     "imagen": "/images/products/wooden_tray.jpg",
-    "destacado": true
+    "destacado": true,
+    "detalle": ""
   },
   {
     "id": "2545",
@@ -21,7 +23,8 @@
     "precio": 15000,
     "stock": 50,
     "imagen": "/images/products/egg_holder.jpg",
-    "destacado": false
+    "destacado": false,
+    "detalle": ""
   },
   {
     "id": "2547",
@@ -29,7 +32,8 @@
     "precio": 38000,
     "stock": 13,
     "imagen": "/images/products/knives_holder.jpg",
-    "destacado": false
+    "destacado": false,
+    "detalle": ""
   },
   {
     "id": "1380",
@@ -37,7 +41,8 @@
     "precio": 42000,
     "stock": 8,
     "imagen": "/images/products/pet_feeder.jpg",
-    "destacado": false
+    "destacado": false,
+    "detalle": ""
   },
   {
     "id": "1788",
@@ -45,7 +50,8 @@
     "precio": 31000,
     "stock": 3,
     "imagen": "/images/products/wooden_planter_riser.jpg",
-    "destacado": true
+    "destacado": true,
+    "detalle": ""
   },
   {
     "id": "1001",
@@ -53,6 +59,7 @@
     "precio": 85000,
     "stock": 12,
     "imagen": "/images/products/wooden_lamp.jpg",
-    "destacado": true
+    "destacado": true,
+    "detalle": ""
   }
 ]

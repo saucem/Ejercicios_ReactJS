@@ -5,7 +5,9 @@ export function ItemList({ productos }) {
   return (
     <div className={styles.cardContainer}>
       {productos.map((prod) => (
-        <Item key={prod.id} {...prod} />
+        //<Link to={`/productos/${prod.id}`}>
+          <Item key={prod.id} {...prod} />
+        //</Link>
       ))}
     </div>
   );

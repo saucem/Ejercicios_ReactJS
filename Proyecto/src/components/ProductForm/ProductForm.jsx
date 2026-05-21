@@ -14,7 +14,7 @@ export function ProductForm({ datosForm, manejarCambio, manejarCambioImagen, man
             <label>Nombre del producto:</label>
             <input
               type="text" 
-              placeholder="Ej.: Teclado mecánico"
+              placeholder="Ej.: Posa pava"
               name="nombre"
               value={datosForm.nombre}
               onChange={manejarCambio}
@@ -24,7 +24,7 @@ export function ProductForm({ datosForm, manejarCambio, manejarCambioImagen, man
             <label>Precio:</label>
             <input 
               type="number"
-              placeholder="Ej. 95"
+              placeholder="Ej.: 10000"
               name="precio"
               value={datosForm.precio}
               onChange={manejarCambio}
@@ -34,7 +34,7 @@ export function ProductForm({ datosForm, manejarCambio, manejarCambioImagen, man
             <label>Stock:</label>
             <input
               type="number"
-              placeholder="Ej. 5"
+              placeholder="Ej.: 5"
               name="stock"
               value={datosForm.stock}
               onChange={manejarCambio}
@@ -47,7 +47,7 @@ export function ProductForm({ datosForm, manejarCambio, manejarCambioImagen, man
               onChange={manejarCambioImagen}
             />
           </div>
-          <button type="submit">Guardar Producto</button>
+          <button className="btn btn-outline" type="submit">Guardar Producto</button>
         </form>
       </div>
     </>

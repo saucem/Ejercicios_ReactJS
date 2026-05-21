@@ -8,7 +8,7 @@ export function ItemListContainer({ Mensaje, Destacados }) {
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    fetch("./data/productos.json")
+    fetch("/data/productos.json")
       .then((respuesta) => {
         if (!respuesta.ok) {
           throw new Error("No se pudo cargar la información de los productos");

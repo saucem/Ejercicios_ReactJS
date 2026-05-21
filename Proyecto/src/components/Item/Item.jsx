@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Item.module.css"
 
-export function Item({ nombre, precio, stock, imagen }) {
+export function Item({ nombre, precio, stock, imagen, id }) {
   const [esFavorito, setEsFavorito] = useState(false);
 
   const [cartQty, setCartQty] = useState(1);
@@ -38,9 +39,11 @@ export function Item({ nombre, precio, stock, imagen }) {
           <img src="/images/icons/favorite_24dp_outline.svg" alt="Ícono Favorito seleccionado"></img>
         }
       </span>
-      <div className={styles.cardHeader}>
-        <img src={imagen} alt="Imagen del producto"/>
-      </div>
+      <Link className={styles.cardLink} to={`/productos/${id}`}>
+        <div className={styles.cardHeader}>
+            <img src={imagen} alt="Imagen del producto"/>
+        </div>
+      </Link>
       <div className={styles.cardBody}>
         <h3>{nombre}</h3>
         <p>Disponible: {stock} unidades</p>
@@ -51,18 +54,18 @@ export function Item({ nombre, precio, stock, imagen }) {
           <button className={styles.btnQty} onClick={SubstractItem}>
             -
           </button>
-          <span className={styles.lblQty}>{cartQty.toLocaleString('de-DE')}</span>
+          <span className={styles.lblQty}>{cartQty}</span>
           <button className={styles.btnQty} onClick={AddItem}>
             +
           </button>
         </span>
         <button
           onClick={AgregarCarrito}
-          className={styles.cardSubmit}>
+          className={"btn btn-solid"}>
             Comprar
         </button>
       </div>
-    </div>
+  </div>
   );
 }
 
