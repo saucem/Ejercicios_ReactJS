@@ -7,7 +7,7 @@ s {
 }
 
 .container{
-  height: 90dvh;
+  min-height: 90dvh;
   width: 100%;
   display: flex;
   justify-content: center;
