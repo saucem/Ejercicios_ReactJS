@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Héctor López",
+    "email": "hlopez@goodwork.com",
+    "puesto": "CEO - Fundador",
+    "foto": "/images/staff/ceo.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Ana Steimberg",
+    "email": "asteimberg@goodwork.com",
+    "puesto": "Diseñadora",
+    "foto": "/images/staff/designer.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Santiago Pérsico",
+    "email": "spersico@goodwork.com",
+    "puesto": "Maestro ebanista",
+    "foto": "/images/staff/carpenter.jpg"
+  }
+]
