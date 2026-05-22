@@ -15,7 +15,7 @@ input {
   flex-direction: column;
   & label {
     font-size: small;
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.05rem;
   }
 }
 
@@ -32,10 +32,12 @@ input {
   background-image: url("/images/dark_warehouse.jpg");
   background-size: cover;
   background-position: center;
+  color: white;
 }
 
 .sectionContent {
   min-height: 45dvh;
+  font-size: 16px;
 }
 
 .productForm {
@@ -46,5 +48,5 @@ input {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  row-gap: 16px;
+  row-gap: 8px;
 }

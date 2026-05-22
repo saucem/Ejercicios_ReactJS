@@ -20,7 +20,7 @@ function Footer() {
           <Directory />
         </div>
       </div>
-      <h5 className={styles.copyright}>GoodWork&copy; · Curso React 2026</h5>
+      <h6 className={styles.copyright}>GoodWork&copy; · Curso React 2026</h6>
     </footer>
   );
 }

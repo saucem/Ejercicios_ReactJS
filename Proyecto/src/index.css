@@ -3,12 +3,13 @@
   --dark-bg: #222;
   --accent: #ffa500;
   --accent-dark: #ff6600;
-  font-family: "Google Sans", "Segoe UI", sans-serif;
+  --bs-font-sans-serif: "Google Sans", "Segoe UI", sans-serif;
+  --bs-secondary: #6c757d;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
+  color: white !important;
   font-size: 18px;
 }
 

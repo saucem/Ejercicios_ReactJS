@@ -6,7 +6,7 @@
     "stock": 15,
     "imagen": "/images/products/pot_base.jpg",
     "destacado": false,
-    "detalle": "Base reversible para apoyar ollas calientes"
+    "detalle": "Liviano: 0,06 kg. Material: bambú. Tamaño: 20 cm de largo y 4 cm de alto. Función: tanto la parte frontal como la trasera pueden usarse como aislante térmico, y también como rejilla para cocinar al vapor. Características: saludable y ecológico, con buen aislamiento térmico"
   },
   {
     "id": "2344",
@@ -15,7 +15,7 @@
     "stock": 25,
     "imagen": "/images/products/wooden_tray.jpg",
     "destacado": true,
-    "detalle": ""
+    "detalle": "Diseño elegante y moderno: presenta un elegante patrón ranurado y bordes redondeados que aportan un toque contemporáneo a cualquier cocina o mesa de comedor. Madera natural: fabricada con bambú ecológico y duradero o madera clara con un acabado apto para alimentos que garantiza una larga vida útil. Uso versátil: ideal para servir donuts, pasteles, quesos, frutas, postres, sushi o embutidos en casa, fiestas o cafeterías. Funcional y estético: la superficie ranurada evita que los alimentos se deslicen y añade un atractivo visual, perfecto para una presentación digna de Instagram. Ligero y fácil de limpiar: compacto y ligero, con una superficie lisa que se limpia fácilmente con un paño húmedo (no apto para lavavajillas)."
   },
   {
     "id": "2545",
@@ -24,7 +24,7 @@
     "stock": 50,
     "imagen": "/images/products/egg_holder.jpg",
     "destacado": false,
-    "detalle": ""
+    "detalle": "Mantén tu cocina organizada y con un estilo impecable con este elegante soporte para huevos de estilo rústico. Fabricado en madera de acacia de alta calidad, este soporte ofrece un aspecto cálido y natural a la vez que mantiene tus huevos perfectamente colocados. Ideal como organizador funcional para la encimera de la cocina, también sirve como un encantador expositor de huevos de madera de acacia y como una sutil pieza de decoración minimalista para la cocina."
   },
   {
     "id": "2547",
@@ -33,7 +33,7 @@
     "stock": 13,
     "imagen": "/images/products/knives_holder.jpg",
     "destacado": false,
-    "detalle": ""
+    "detalle": "Elaborado por expertos con hermosas maderas duras seleccionadas a mano. Estos soportes para cuchillos tienen 6 pulgadas de profundidad, 6 1/2 pulgadas de ancho y un poco más de 10 pulgadas de alto, por lo que pueden manejar un cuchillo con una hoja de 10 pulgadas. Tienen potentes imanes de tierras raras en cada ranura para sujetar los cuchillos de forma segura, incluso si la empuñadura de los cuchillos está en ángulo o el mango es más pesado que la hoja. Los pies de goma que no dejan marcas mantienen la rejilla en su lugar. Funcionan mejor en una isla de cocina para evitar problemas de espacio libre con los gabinetes superiores."
   },
   {
     "id": "1380",
@@ -42,24 +42,24 @@
     "stock": 8,
     "imagen": "/images/products/pet_feeder.jpg",
     "destacado": false,
-    "detalle": ""
+    "detalle": "Los elegantes soportes y conjuntos de comederos elevados para perros tienen la altura perfecta para que tu querida mascota o toda tu manada estén cómodas mientras comen y beben. Disfruta de su aspecto único y contemporáneo, tanto dentro de casa como en la terraza o el patio, para servirles comida y agua."
   },
   {
     "id": "1788",
     "nombre": "Portamacetas Deco",
-    "precio": 31000,
+    "precio": 31500,
     "stock": 3,
     "imagen": "/images/products/wooden_planter_riser.jpg",
     "destacado": true,
-    "detalle": ""
+    "detalle": "Soporte para plantas, bonito y atractivo. Fabricado en madera duradera para un uso prolongado. Almohadillas reforzadas en las patas para proteger el suelo de arañazos. Acabado liso y bonito. Ideal para colocar tus plantas pequeñas favoritas y tus plantas en maceta."
   },
   {
     "id": "1001",
-    "nombre": "Lámpara Estudio",
+    "nombre": "Lámpara Study",
     "precio": 85000,
     "stock": 12,
     "imagen": "/images/products/wooden_lamp.jpg",
     "destacado": true,
-    "detalle": ""
+    "detalle": "Lámpara de madera artesanal con luz LED estilo vintage. Un regalo ideal para tu hogar, esta lámpara de mesa está hecha a mano por un artesano experto con madera maciza de roble o nogal, y recubierta con aceite natural italiano para madera. Se puede usar como lámpara de mesita de noche o lámpara de escritorio y es perfecta para la decoración del hogar."
   }
 ]

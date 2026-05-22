@@ -11,6 +11,7 @@
   background-image: url("/images/empty_cart.jpg");
   background-size: cover;
   background-position: center;
+  color: white;
 }
 
 .sectionContent{
