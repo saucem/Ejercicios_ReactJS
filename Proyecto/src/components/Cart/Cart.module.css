@@ -1,4 +1,5 @@
-.sectionTitle,
+.sectionTitleEmpty,
+.sectionTitleFull,
 .sectionContent{
   min-height: 45dvh;
   width: 100%;
@@ -7,12 +8,20 @@
   align-items: center;
 }
 
-.sectionTitle{
+.sectionTitleEmpty{
   background-image: url("/images/empty_cart.jpg");
   background-size: cover;
   background-position: center;
   color: white;
 }
+
+.sectionTitleFull{
+  background-image: url("/images/product_transport.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
 
 .sectionContent{
   flex-direction: column;
