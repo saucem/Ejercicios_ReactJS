@@ -1,6 +1,6 @@
 :root {
   --light-bg: #F5F4EF;
-  --dark-bg: #222;
+  --dark-bg: #212529;
   --accent: #ffa500;
   --accent-dark: #ff6600;
   --bs-font-sans-serif: "Google Sans", "Segoe UI", sans-serif;
@@ -48,7 +48,7 @@
 
 body,
 footer {
-  background-color: #222;
+  background-color: var(--dark-bg);
 }
 
 h1,

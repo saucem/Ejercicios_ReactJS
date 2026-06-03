@@ -1,8 +1,5 @@
 .header{
-  height: 10dvh;
-  padding: 10px;
+  min-height: 10dvh;
   text-align: center;
   color:white;
-  /* position: sticky;
-  top: 0; */
 }

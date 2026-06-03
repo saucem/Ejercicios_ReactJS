@@ -5,7 +5,6 @@
   flex-wrap: nowrap;
   & img {
     vertical-align: text-bottom;
-    margin-right: 0.5rem;
     filter: invert(100);
   }
 }
@@ -48,9 +47,6 @@
   & ul {
     justify-content: end;
   }
-  & img {
-    margin: 0;
-  }
 }
 
 .navlink {
@@ -82,3 +78,14 @@
   filter: brightness(0) saturate(100%) invert(75%) sepia(24%)
         saturate(6408%) hue-rotate(359deg) brightness(100%) contrast(105%);
 }
+
+.brandImage{
+  width: 5dvh;
+  margin-left: 0.5rem;
+}
+
+.brandTitle{
+  font-size: 4dvh;
+  font-weight: 500;
+}
+
