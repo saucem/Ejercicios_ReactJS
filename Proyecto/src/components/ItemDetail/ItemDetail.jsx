@@ -41,7 +41,7 @@ const ItemDetail = () => {
       <section className={styles.container}>
         <Container>
           <Row className={styles.row}>
-            <Col lg={6}>
+            <Col lg={6} className="text-center">
               <img
                 src={producto.imagen}
                 alt={`Imagen de ${producto.nombre}`}
@@ -77,13 +77,13 @@ const ItemDetail = () => {
               <p className="h2">${price.format(producto.precio)}</p>
               <p className="text-small mb-2">Precio sin impuestos nacionales: ${price.format(netPrice)}</p>
               <div className="d-flex align-items-center gap-1">
-                <img src="/images/icons/box_36dp.svg" alt="Icono de caja" className="d-block" width={24} />
+                <img src="/images/icons/package_36dp.svg" alt="Icono de caja" className="d-block" />
                 <p className="h6 m-0">Disponibles: {producto.stock}</p>
               </div>
               <hr className="w-100 mb-2 mb-lg-4" />
               <p className="fs-6 lh-sm">{producto.detalle}</p>
               <hr className="w-100 mb-2 mb-lg-4" />
-              <div className="d-flex flex-column gap-2">
+              <div className="d-flex flex-column gap-2 mb-2">
                 <span className="d-flex gap-1 align-items-center">
                   <img src="/images/icons/local_shipping_36dp.svg" alt="Icono de camión de envíos" />
                   <p className="h6 m-0">Envío GRATIS a partir de $100.000</p>

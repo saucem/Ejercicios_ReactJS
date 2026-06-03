@@ -1,10 +1,22 @@
 import React from "react";
-import styles from "./Nav.module.css"
+import { Navbar } from 'react-bootstrap';
+import { Nav } from "react-bootstrap";
+// import styles from "./Nav.module.css"
 import { Link } from "react-router-dom";
 
-export function Nav() {
+
+
+export function Navigation() {
   return (
     <>
+      <Navbar expand="lg" bg="dark" variant="light" data-bs-theme="dark">
+        <Navbar.Brand className="display-1 ms-2">
+          <img src="../images/icons/goodwork_logo_white.svg" alt="Logo WoodWork" width={"48"} />
+          <span className="h2">GoodWork</span>
+        </Navbar.Brand>  
+      </Navbar>
+      
+      {/*
       <nav className={styles.nav}>
         <div className={styles.navbrand}>
           <span>
@@ -28,7 +40,8 @@ export function Nav() {
             </ul>
           </div>
         </div>
-      </nav>      
+      </nav>
+      */}
     </>
   )
 } 

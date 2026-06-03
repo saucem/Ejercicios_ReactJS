@@ -1,11 +1,11 @@
-import { Nav } from "../Nav/Nav.jsx";
+import { Navigation } from "../Navigation/Navigation.jsx";
 import styles from "./Header.module.css"
 import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header className={styles.header}>
-      <Nav />
+      <Navigation />
     </header>    
   );
 }
