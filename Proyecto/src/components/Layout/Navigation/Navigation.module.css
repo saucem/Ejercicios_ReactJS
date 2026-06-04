@@ -1,54 +1,3 @@
-.nav {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  & img {
-    vertical-align: text-bottom;
-    filter: invert(100);
-  }
-}
-
-.navbar {
-  flex-grow: 1;
-  & ul {
-    display: flex;
-    justify-content: center;
-  }
-  & li {
-    list-style: none;
-    padding: 0 1rem;
-  }
-}
-
-.navbrand,
-.navbar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.navbrand,
-.navtrail {
-  width: 30%;
-}
-
-.navbrand {
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 0 1rem;
-  align-items: start;
-}
-
-.navtrail {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  & ul {
-    justify-content: end;
-  }
-}
-
 .navlink {
   position: relative;
   text-decoration: none;
@@ -74,14 +23,9 @@
   }
 }
 
-.navlinkImage:hover img{
-  filter: brightness(0) saturate(100%) invert(75%) sepia(24%)
-        saturate(6408%) hue-rotate(359deg) brightness(100%) contrast(105%);
-}
-
 .brandImage{
   width: 5dvh;
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .brandTitle{
@@ -89,3 +33,16 @@
   font-weight: 500;
 }
 
+.btnLink{
+  border: 2px solid var(--accent);
+  border-radius: var(--btn-border-radius);
+  padding: 8px 16px;
+  &:hover{
+    background-color: var(--accent);
+  }
+}
+
+.imgLink{
+  vertical-align: text-bottom;
+  filter: invert(100);
+}

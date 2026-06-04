@@ -47,7 +47,7 @@ export function ProductForm({ datosForm, manejarCambio, manejarCambioImagen, man
               onChange={manejarCambioImagen}
             />
           </div>
-          <button className="btn btn-outline" type="submit">Guardar Producto</button>
+          <button className="btn btn-outline-warning" type="submit">Guardar Producto</button>
         </form>
       </div>
     </>
