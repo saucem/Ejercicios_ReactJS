@@ -4,6 +4,7 @@
   --accent: #ffa500;
   --accent-dark: #ff6600;
   --bs-secondary: #6c757d;
+  --bs-warning-rgb: 255, 102, 0;
   /*--bs-navbar-active-color: #ffa500 !important;*/
   --bs-font-sans-serif: "Google Sans", "Segoe UI", sans-serif;
   --bs-btn-font-family: "Google Sans", "Segoe UI", sans-serif;
@@ -139,4 +140,9 @@ img {
       transform: scaleX(0);
     }
   }
+}
+
+.badge {
+  border-radius: 50%;
+  font-size: small;
 }

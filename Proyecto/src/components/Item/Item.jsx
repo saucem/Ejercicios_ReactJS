@@ -12,7 +12,7 @@ export function Item({ nombre, precio, stock, imagen, id }) {
 
   const [cartQty, setCartQty] = useState(1);
 
-  const { addToCart } = useCart(); //traemos la función del contexto que nos interesa usar en este punto
+  const { addToCart, getCurrentQuantity } = useCart(); //traemos las funciones del contexto que nos interesa usar en este punto
 
   const SubstractItem = () => {
     if (cartQty > 1) {
@@ -31,7 +31,6 @@ export function Item({ nombre, precio, stock, imagen, id }) {
   };
 
   const handleAddToCart = () => {
-    //alert(`Agregaste ${cartQty} ${nombre} a tu carrito!`);
     addToCart(product, cartQty);
   };
 
@@ -58,6 +57,19 @@ export function Item({ nombre, precio, stock, imagen, id }) {
         </div>
       </Link>
       <div className={styles.cardBody}>
+        { getCurrentQuantity(id) ?
+          (
+            <span className={styles.iconCart}>
+              <img 
+                src="../images/icons/shopping_cart_32dp.svg"
+                alt="Imagen de un carrito de compras"
+                width={"24"}
+                className={styles.imgLink}
+              />
+              <span>{getCurrentQuantity(id)}</span>
+            </span>
+          ) : ""
+        }      
         <h3>{nombre}</h3>
         <p>Disponible: {stock} unidades</p>
         <p className={styles.productPrice}>${price.format(precio)}</p>

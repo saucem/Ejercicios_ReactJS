@@ -43,6 +43,6 @@
 }
 
 .imgLink{
-  vertical-align: text-bottom;
+  vertical-align: text-top;
   filter: invert(100);
 }

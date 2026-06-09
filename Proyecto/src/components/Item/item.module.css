@@ -56,6 +56,7 @@ button{
 .cardBody,
 .cardFooter {
   padding: 0 1rem;
+  position: relative;
 }
 
 .cardFooter{
@@ -73,13 +74,18 @@ button{
   margin-bottom: 1rem;
 }
 
-.iconFav {
+.iconFav,
+.iconCart {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  right: 1rem;
   filter: brightness(0) saturate(100%) invert(75%) sepia(24%) saturate(6408%) hue-rotate(359deg) brightness(100%) contrast(105%);
   cursor: pointer;
 }
+
+.iconFav { top: 10px; }
+
+.iconCart { top: 0px; }
+
 
 
 .qtyField{

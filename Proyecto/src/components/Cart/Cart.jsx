@@ -37,7 +37,7 @@ export function Cart() {
       <div className={styles.sectionContent}>
         <h2>Agregaste productos a tu carrito</h2>
         {cart.map(item => (
-          <div key={item.id}>
+          <div key={item.id} className="h-card">
             <h4>{item.nombre}</h4>
             <p>Cantidad: {item.quantity}</p>
             <p>Precio unitario: {item.precio}</p>
@@ -50,6 +50,7 @@ export function Cart() {
           Vaciar carrito
         </button>
       </div>
+
     </>
   );
 }

@@ -1,12 +1,16 @@
 import React from "react";
 import { Container, Navbar } from 'react-bootstrap';
 import { Nav, Button } from "react-bootstrap";
+import { Badge } from "react-bootstrap";
 import styles from "./Navigation.module.css"
 import { Link } from "react-router-dom";
-
+import { useCart } from "../../../context/CartContext.jsx";
 
 
 export function Navigation() {
+  const {getCartQuantity} = useCart();
+  console.log(getCartQuantity());
+
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="light" data-bs-theme="dark">
@@ -29,6 +33,7 @@ export function Navigation() {
                   width={"24"}
                   className={styles.imgLink}
                 />
+                <Badge bg="warning">{getCartQuantity() ? getCartQuantity() : ""}</Badge>
               </Nav.Link>
               <div className="vr d-none d-lg-block mx-2" />
               <Nav.Link as={Link} to={"/altaproducto"} eventKey={7} className="nav-button">
