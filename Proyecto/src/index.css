@@ -143,6 +143,9 @@ img {
 }
 
 .badge {
-  border-radius: 50%;
   font-size: small;
+}
+
+.table {
+  vertical-align: middle;
 }

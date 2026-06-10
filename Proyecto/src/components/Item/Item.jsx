@@ -21,7 +21,7 @@ export function Item({ nombre, precio, stock, imagen, id }) {
   };
 
   const AddItem = () => {
-    if (cartQty < stock) {
+    if (cartQty + getCurrentQuantity(id) < stock) {
       setCartQty(cartQty + 1);
     }
   };
@@ -32,6 +32,16 @@ export function Item({ nombre, precio, stock, imagen, id }) {
 
   const handleAddToCart = () => {
     addToCart(product, cartQty);
+  };
+
+  const addToCartEnabled = () => {
+    if (
+      getCurrentQuantity(id) === stock ||
+      getCurrentQuantity(id) + cartQty > stock
+    ) {
+      return false;
+    }
+    return true;
   };
 
   const price = new Intl.NumberFormat("es-Latn");
@@ -57,10 +67,10 @@ export function Item({ nombre, precio, stock, imagen, id }) {
         </div>
       </Link>
       <div className={styles.cardBody}>
-        { getCurrentQuantity(id) ?
-          (
+        {getCurrentQuantity(id) ? (
+          <Link to={"/carrito"}>
             <span className={styles.iconCart}>
-              <img 
+              <img
                 src="../images/icons/shopping_cart_32dp.svg"
                 alt="Imagen de un carrito de compras"
                 width={"24"}
@@ -68,8 +78,10 @@ export function Item({ nombre, precio, stock, imagen, id }) {
               />
               <span>{getCurrentQuantity(id)}</span>
             </span>
-          ) : ""
-        }      
+          </Link>
+        ) : (
+          ""
+        )}
         <h3>{nombre}</h3>
         <p>Disponible: {stock} unidades</p>
         <p className={styles.productPrice}>${price.format(precio)}</p>
@@ -84,12 +96,16 @@ export function Item({ nombre, precio, stock, imagen, id }) {
             +
           </button>
         </span>
-        <button onClick={handleAddToCart} className={"btn btn-solid"}>
-          Comprar
-        </button>
+        {addToCartEnabled() ? (
+          <button onClick={handleAddToCart} className={"btn btn-solid"}>
+            Comprar
+          </button>
+        ) : (
+          <button className={"btn btn-solid"} disabled>
+            Comprar
+          </button>
+        )}
       </div>
     </div>
   );
 }
-
-//⭐☆

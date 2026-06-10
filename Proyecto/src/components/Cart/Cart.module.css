@@ -1,6 +1,6 @@
 .sectionTitleEmpty,
 .sectionTitleFull,
-.sectionContent{
+.sectionContent {
   min-height: 45dvh;
   width: 100%;
   display: flex;
@@ -8,26 +8,33 @@
   align-items: center;
 }
 
-.sectionTitleEmpty{
+.sectionTitleEmpty {
   background-image: url("/images/empty_cart.jpg");
   background-size: cover;
   background-position: center;
   color: white;
 }
 
-.sectionTitleFull{
+.sectionTitleFull {
   background-image: url("/images/product_transport.jpg");
   background-size: cover;
   background-position: center;
   color: white;
 }
 
-
-.sectionContent{
+.sectionContent {
   flex-direction: column;
   color: var(--dark-bg);
   background-color: var(--light-bg);
-  & p{
-    margin-bottom: 1rem;
-  }
+  row-gap: 1rem;
+  padding: 1rem,0;
+}
+
+img.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover; /* Crops and fills the container */
+  object-position: center; /* Centers the cropped area */
+  border-radius: 8px;
+  vertical-align: middle;
 }
