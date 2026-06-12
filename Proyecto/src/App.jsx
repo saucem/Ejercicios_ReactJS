@@ -8,6 +8,7 @@ import Home from "./components/Home/Home.jsx";
 import { ProductFormContainer } from './components/ProductForm/ProductFormContainer.jsx';
 import { Cart } from './components/Cart/Cart.jsx';
 import ItemDetail from './components/ItemDetail/ItemDetail.jsx';
+import DBProducts from './components/DBProducts/DBProducts.jsx';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/destacados' element={<ItemListContainer Mensaje={"Productos Destacados"} Destacados={true}/>} />
         <Route path='/altaproducto' element={<ProductFormContainer />} />
         <Route path='/carrito' element={<Cart />} />
+        <Route path='/productosbd' element={<DBProducts />} />
       </Route>
     </Routes>
   );
