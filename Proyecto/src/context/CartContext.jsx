@@ -31,25 +31,45 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => {
     setCart([]);
-  }
+  };
+
+  const removeItem = (productId) => {
+    const updatedCart = cart.filter((item) => item.id !== productId);
+    setCart(updatedCart);
+  };
+
+  const isInCart = (productId) => {
+    return cart.some((item) => item.id === productId);
+  };
 
   const getCartQuantity = () => {
     return cart.reduce((acc, item) => acc + item.quantity, 0); //acc = accumulator
-  }
+  };
 
   const getCartTotal = () => {
     return cart.reduce((acc, item) => acc + item.quantity * item.precio, 0); //acc = accumulator
-  }
+  };
 
   const getCurrentQuantity = (productID) => {
-    const item = cart.find(item => item.id === productID);
+    const item = cart.find((item) => item.id === productID);
     return item ? item.quantity : 0;
-  }
+  };
 
   return (
     <CartContext.Provider
-      value={{ cart, useCart, addToCart, clearCart, getCartQuantity, getCartTotal, getCurrentQuantity }}>
+      value={{
+        cart,
+        useCart,
+        addToCart,
+        isInCart,
+        removeItem,
+        clearCart,
+        getCartQuantity,
+        getCartTotal,
+        getCurrentQuantity,
+      }}
+    >
       {children}
     </CartContext.Provider>
-  )
+  );
 };

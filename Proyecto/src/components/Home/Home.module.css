@@ -2,22 +2,15 @@
   color: white;
   background-image: url("/images/hero.jpg");
   background-size: cover;
+  background-position: top;
   height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: end;
-  gap: 2rem;
-  padding: 0 1rem;
   & .heroTitle {
-    max-width: 50%;
-    font-size: 4rem;
+    font-size: var(--hero-title-font-size);
     font-weight: 500;
-    line-height: 4rem;
+    line-height: var(--hero-title-font-size);
   }
   & .heroSubtitle {
-    font-size: 2rem;
-    max-width: 50%;
-    line-height: 2.5rem;
+    font-size: calc(var(--hero-title-font-size)/2);
+    line-height: calc(var(--hero-title-font-size)/1.9);
   }
 }

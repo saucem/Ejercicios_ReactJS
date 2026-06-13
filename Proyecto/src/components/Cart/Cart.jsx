@@ -4,7 +4,7 @@ import { useCart } from "../../context/CartContext";
 import { Table } from "react-bootstrap";
 
 export function Cart() {
-  const { cart, clearCart, getCartTotal } = useCart();
+  const { cart, clearCart, getCartTotal, removeItem } = useCart();
 
   const price = new Intl.NumberFormat("es-Latn");
 
@@ -38,8 +38,8 @@ export function Cart() {
         <h1>Carrito</h1>
       </div>
       <div className={styles.sectionContent}>
-        <h2>Agregaste productos a tu carrito</h2>
-        <Table striped responsive>
+        <h2 className="mt-4">Agregaste productos a tu carrito</h2>
+        <Table hover responsive>
           <thead>
             <tr>
               <th>Imagen</th>
@@ -64,7 +64,20 @@ export function Cart() {
                 <td className="text-center">{item.quantity}</td>
                 <td>${price.format(item.precio)}</td>
                 <td>${price.format(item.precio * item.quantity)}</td>
-                <td>Acciones</td>
+                <td className="text-center">
+                  <button onClick={""} className="action-link">
+                    <img 
+                      src="/images/icons/edit_48dp.svg"
+                      alt="Imagen de lápiz de edición"
+                      width={24} />
+                  </button>
+                  <button onClick={() => removeItem(item.id)} className="action-link">
+                    <img 
+                      src="/images/icons/delete_48dp.svg"
+                      alt="Imagen de cesto de basura"
+                      width={24} />
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
