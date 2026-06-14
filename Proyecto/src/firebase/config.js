@@ -1,14 +1,19 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+const apiKeyConfig = import.meta.env.VITE_API_KEY;
+const apiAuthDomainConfig = import.meta.env.VITE_API_AUTH_DOMAIN;
+const apiMsgSenderIdConfig = import.meta.env.VITE_API_MSG_SENDER_ID;
+const apiAppIdConfig = import.meta.env.VITE_API_APP_ID;
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBYr2q5PDYyBdNyl-fMROpaFu5XnHFd9cU",
-  authDomain: "goodwork-project.firebaseapp.com",
+  apiKey: apiKeyConfig,
+  authDomain: apiAuthDomainConfig,
   projectId: "goodwork-project",
   storageBucket: "goodwork-project.firebasestorage.app",
   messagingSenderId: "360766645945",
-  appId: "1:360766645945:web:054c862777067b89501d68"
+  appId: apiAppIdConfig
 };
 
 // Initialize Firebase
