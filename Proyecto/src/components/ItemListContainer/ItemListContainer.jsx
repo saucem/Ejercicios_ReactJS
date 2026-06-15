@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ItemList } from "../ItemList/Itemlist";
+import { ItemList } from "../ItemList/ItemList.jsx";
 import styles from "./ItemListContainer.module.css"
 
 export function ItemListContainer({ Mensaje, Destacados }) {

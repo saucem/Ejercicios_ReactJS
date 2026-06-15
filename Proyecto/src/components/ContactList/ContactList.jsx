@@ -3,7 +3,7 @@ import styles from "../ContactList/ContactList.module.css"
 
 export function ContactList({ contactos }) {
   return (
-    <div className={styles.container}>
+    <div className="row">
       {contactos.map((contacto) => (
         <Contact key={contacto.id} {...contacto} />
       ))}

@@ -72,6 +72,9 @@ p {
 
 img {
   vertical-align: text-bottom;
+  &.inverted{
+    filter: invert(100%);
+  }
 }
 
 .btn {

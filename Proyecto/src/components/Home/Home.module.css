@@ -1,9 +1,7 @@
 .hero {
   color: white;
-  background-image: url("/images/hero.jpg");
-  background-size: cover;
-  background-position: top;
   height: 90vh;
+  position: relative;
   & .heroTitle {
     font-size: var(--hero-title-font-size);
     font-weight: 500;
@@ -12,5 +10,15 @@
   & .heroSubtitle {
     font-size: calc(var(--hero-title-font-size)/2);
     line-height: calc(var(--hero-title-font-size)/1.9);
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-image: url("/images/hero.jpg");
+    background-size: cover;
+    background-position: top;
+    filter: brightness(70%) contrast(120%);
+    z-index: -1;
   }
 }

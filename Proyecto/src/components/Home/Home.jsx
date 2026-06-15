@@ -1,4 +1,3 @@
-import { ItemListContainer } from "../ItemListContainer/ItemListContainer";
 import styles from "../Home/Home.module.css"
 
 function Home() {
@@ -16,7 +15,6 @@ function Home() {
           </div>
         </div>
       </div>
-
     </>
   );
 }
