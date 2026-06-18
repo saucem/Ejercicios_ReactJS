@@ -80,6 +80,7 @@ button{
   right: 1rem;
   filter: brightness(0) saturate(100%) invert(75%) sepia(24%) saturate(6408%) hue-rotate(359deg) brightness(100%) contrast(105%);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .iconFav { top: 10px; }

@@ -24,7 +24,7 @@ export function Cart() {
             En la sección de destacados podrás encontrar tu próximo objeto
             favorito
           </p>
-          <Link className="btn btn-solid" to={"/destacados"}>
+          <Link className="btn btn-warning" to={"/destacados"}>
             Explorar destacados
           </Link>
         </div>
@@ -84,7 +84,7 @@ export function Cart() {
         </Table>
         <hr />
         <h3>Total a pagar: ${getCartTotal()}</h3>
-        <button className="btn btn-solid mb-2" onClick={clearCart}>
+        <button className="btn btn-danger mb-2" onClick={clearCart}>
           Vaciar carrito
         </button>
       </div>
