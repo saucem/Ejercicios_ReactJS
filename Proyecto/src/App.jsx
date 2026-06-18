@@ -9,6 +9,7 @@ import { ProductFormContainer } from './components/ProductForm/ProductFormContai
 import { Cart } from './components/Cart/Cart.jsx';
 import ItemDetail from './components/ItemDetail/ItemDetail.jsx';
 import DBProducts from './components/DBProducts/DBProducts.jsx';
+import DBProductsDetail from './components/DBProductsDetail/DBProductsDetail.jsx';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/altaproducto' element={<ProductFormContainer />} />
         <Route path='/carrito' element={<Cart />} />
         <Route path='/productosbd' element={<DBProducts />} />
+        <Route path='/productosbd/:id' element={<DBProductsDetail />} />
       </Route>
     </Routes>
   );

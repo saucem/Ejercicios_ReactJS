@@ -12,7 +12,7 @@ const firebaseConfig = {
   authDomain: apiAuthDomainConfig,
   projectId: "goodwork-project",
   storageBucket: "goodwork-project.firebasestorage.app",
-  messagingSenderId: "360766645945",
+  messagingSenderId: apiMsgSenderIdConfig,
   appId: apiAppIdConfig
 };
 

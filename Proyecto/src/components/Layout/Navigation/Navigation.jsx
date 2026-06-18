@@ -37,7 +37,7 @@ export function Navigation() {
               <div className="vr d-none d-lg-block mx-2" />
               <Nav.Link as={Link} to={"/altaproducto"} eventKey={7} className="nav-button">
                 <Button variant="outline-warning">
-                  Stock
+                  Gestión de stock
                 </Button>
               </Nav.Link>
             </Nav>

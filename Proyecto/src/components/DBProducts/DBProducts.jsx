@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/config.js";
+import { Link } from "react-router-dom";
 
 const DBProducts = () => {
   const [productos, setProductos] = useState([]);
@@ -35,6 +36,7 @@ const DBProducts = () => {
             <p>Categoría: {prod.categoria}</p>
             <p>Precio: ${prod.precio}</p>
             <p>Stock: {prod.stock} unidades</p>
+            <Link to={`/productosbd/${prod.id}`}>Ver detalle</Link>
             <hr />
           </div>
         ))}

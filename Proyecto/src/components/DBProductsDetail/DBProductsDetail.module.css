@@ -1,0 +1,42 @@
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+s {
+  color: silver;
+}
+
+.container{
+  min-height: 90dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-bg);
+  background-color: var(--light-bg);
+}
+
+.imgDetail {
+  height: 100%;
+  max-width: 100%;
+  max-height: 75dvh;
+  object-fit: contain;
+  border-radius: 24px;
+}
+
+.imageContainer,
+.dataContainer{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageContainer{
+  position: relative;
+  border-radius: 24px;
+  max-width: 50dvw;
+  & img {
+    object-fit: cover;
+  }  
+}
