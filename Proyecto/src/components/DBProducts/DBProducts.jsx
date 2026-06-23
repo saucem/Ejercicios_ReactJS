@@ -11,7 +11,8 @@ const DBProducts = () => {
     getDocs(dataBaseProducts).then((resp) => {
       setProductos(
         resp.docs.map((doc) => {
-          return { ...doc.data(), id: doc.id };
+          //return { ...doc.data(), id: doc.id }; Esto es para tomar el id random generado por firebase
+          return { ...doc.data() }; // pasamos sólo la info del producto, sin modificar el id nuestro que podría ser el SKU
         }),
       );
     });

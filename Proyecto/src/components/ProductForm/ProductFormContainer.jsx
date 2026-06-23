@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { ProductForm } from "./ProductForm";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 export function ProductFormContainer() {
   const [datosForm, setDatosForm] = useState({
     nombre: "",
     precio: "",
-    stock: ""
+    stock: "",
+    categoria: ""
   });
 
   const manejarCambio = (evento) => {
@@ -48,7 +50,14 @@ const manejarEnvio = async (evento) => {
         ...datosForm,
         urlImagen: datosImgbb.data.url
       }
-      console.log("Enviando los siguientes datos completos a la API: ", datosFormCompletos)
+      console.log("Enviando los siguientes datos completos a la Firebase: ", datosFormCompletos)
+
+      const db = getFirestore();
+
+      const productsCollection = collection(db, "products")
+
+      await addDoc(productsCollection, datosFormCompletos);
+
     } else {
       throw new Error("La subida de la imagen al servicio de Imgbb falló");
     }
@@ -58,6 +67,9 @@ const manejarEnvio = async (evento) => {
     console.error("Error en el proceso de envío: ", error);
     alert("Hubo un error al subir la imagen. Por favor, intentá de nuevo");
   }
+
+// agregar finally con setLoading(false)
+
 }
 
   return (

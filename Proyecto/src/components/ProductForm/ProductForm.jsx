@@ -2,6 +2,9 @@ import React from "react"
 import styles from "./ProductForm.module.css"
 
 export function ProductForm({ datosForm, manejarCambio, manejarCambioImagen, manejarEnvio}) {
+  
+  //Agregar los campos necesarios para completar la carga de un producto en la BD de Firestore (id, categoría, etc.)
+  
   return (
     <>
       <div className={styles.sectionTitle}>
