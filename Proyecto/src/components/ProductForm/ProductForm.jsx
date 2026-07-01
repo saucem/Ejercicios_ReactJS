@@ -8,7 +8,7 @@ export function ProductForm({ datosForm, manejarCambio, manejarCambioImagen, man
   return (
     <>
       <div className={styles.sectionTitle}>
-        <h1>Control de stock</h1>
+        <h1>Gestión de stock</h1>
       </div>
       <div className={styles.sectionContent}>
         <form onSubmit={manejarEnvio} className={styles.productForm}>

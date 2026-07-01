@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home.jsx";
 import { ProductFormContainer } from './components/ProductForm/ProductFormContainer.jsx';
 import { Cart } from './components/Cart/Cart.jsx';
+import HandleCoupons from './components/HandleCoupons/HandleCoupons.jsx';
 import ItemDetail from './components/ItemDetail/ItemDetail.jsx';
 import DBProducts from './components/DBProducts/DBProducts.jsx';
 import DBProductsDetail from './components/DBProductsDetail/DBProductsDetail.jsx';
@@ -24,6 +25,7 @@ function App() {
         <Route path='/carrito' element={<Cart />} />
         <Route path='/productosbd' element={<DBProducts />} />
         <Route path='/productosbd/:id' element={<DBProductsDetail />} />
+        <Route path='/gestioncupones' element={<HandleCoupons />}></Route>
       </Route>
     </Routes>
   );
