@@ -40,6 +40,7 @@ export function Navigation() {
                   Gestión de stock
                 </Button>
               </Nav.Link>
+              //Agregar acá el nombre del usuario y los botones de acceso a las secciones que requieren estar logueado
             </Nav>
           </Navbar.Collapse>
         </Container>

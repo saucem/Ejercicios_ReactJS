@@ -11,6 +11,9 @@ import HandleCoupons from './components/HandleCoupons/HandleCoupons.jsx';
 import ItemDetail from './components/ItemDetail/ItemDetail.jsx';
 import DBProducts from './components/DBProducts/DBProducts.jsx';
 import DBProductsDetail from './components/DBProductsDetail/DBProductsDetail.jsx';
+import Login from './components/Login/Login.jsx';
+import Register from './components/Register/Register.jsx';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
 
 function App() {
   return (
@@ -25,7 +28,13 @@ function App() {
         <Route path='/carrito' element={<Cart />} />
         <Route path='/productosbd' element={<DBProducts />} />
         <Route path='/productosbd/:id' element={<DBProductsDetail />} />
-        <Route path='/gestioncupones' element={<HandleCoupons />}></Route>
+        <Route path='/gestioncupones' element={
+          <ProtectedRoute rolesPermitidos={["administrator"]}>
+            <HandleCoupons />
+          </ProtectedRoute>
+        }></Route>
+        <Route path='/login'element={<Login />}></Route>
+        <Route path='/register' element={<Register />}></Route>
       </Route>
     </Routes>
   );
