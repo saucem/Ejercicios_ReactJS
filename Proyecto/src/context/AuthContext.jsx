@@ -7,8 +7,10 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+
 // 1. Crear el contexto
 export const AuthContext = createContext();
+
 // Hook personalizado
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -17,37 +19,42 @@ export const useAuth = () => {
   }
   return context;
 };
+
 // 2. Crear el proveedor del contexto
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const auth = getAuth(); // Obtenemos la instancia de auth una sola vez
   const db = getFirestore(); // Inicializamos Firestore
+
   // Función para registrar un nuevo usuario
   const signup = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
   // Función para iniciar sesión
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
+
   // Función para cerrar sesión
   const logout = () => {
     signOut(auth);
   };
+
   useEffect(() => {
     // onAuthStateChanged es el observador de Firebase
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         // Si hay un usuario, buscamos su rol en Firestore.
-        const userDocRef = doc(db, "usuarios", currentUser.uid);
+        const userDocRef = doc(db, "users", currentUser.uid);
         const userDocSnap = await getDoc(userDocRef);
-        if (userDocSnap.exists() && userDocSnap.data().rol === "admin") {
+        if (userDocSnap.exists() && userDocSnap.data().role === "admin") {
           // Si el documento existe y tiene rol de admin, lo asignamos.
-          setUser({ ...currentUser, rol: "admin" });
+          setUser({ ...currentUser, role: "admin" });
         } else {
           // Para cualquier otro caso, es un usuario regular.
-          setUser({ ...currentUser, rol: "user" });
+          setUser({ ...currentUser, role: "user" });
         }
       } else {
         setUser(null);
@@ -57,14 +64,16 @@ export const AuthProvider = ({ children }) => {
     // Limpiamos el observador al desmontar
     return () => unsubscribe();
   }, [auth, db]); // Agregamos 'auth' como dependencia
+  
   // Crear el objeto 'value' con TODAS las funciones definidas
   const value = {
     user,
-    loading, // Es buena práctica pasar el estado de carga también
+    loading,
     signup,
-    login, // Ahora 'login' sí existe y se puede pasar
+    login,
     logout,
   };
+  
   // Retornar el Provider, asegurándonos de no renderizar hasta que cargue
   // Esto evita que los componentes hijos puedan acceder a 'user' cuando es null
   return (

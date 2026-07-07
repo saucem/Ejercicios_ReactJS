@@ -29,7 +29,7 @@ function App() {
         <Route path='/productosbd' element={<DBProducts />} />
         <Route path='/productosbd/:id' element={<DBProductsDetail />} />
         <Route path='/gestioncupones' element={
-          <ProtectedRoute rolesPermitidos={["administrator"]}>
+          <ProtectedRoute rolesPermitidos={["admin"]}>
             <HandleCoupons />
           </ProtectedRoute>
         }></Route>
