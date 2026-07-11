@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children, rolesPermitidos }) => {
     return <div>Cargando...</div>;
   }
   // Si no hay un usuario autenticado O si su rol no está incluido en la lista de roles permitidos, redirigimos al login.
-  if (!user || (rolesPermitidos && !rolesPermitidos.includes(user.rol))) {
+  if (!user || (rolesPermitidos && !rolesPermitidos.includes(user.role))) {
     return <Navigate to="/login" />;
   }
 
