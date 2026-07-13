@@ -12,8 +12,6 @@ export function Navigation() {
   const { getCartQuantity } = useCart();
   const { user, login, logout } = useAuth();
 
-  console.log(user);
-
   return (
     <>
       <Navbar
@@ -30,7 +28,7 @@ export function Navigation() {
               alt="Logo WoodWork"
               className={styles.brandImage}
             />
-            <span className={styles.brandTitle}>GoodWork</span>
+            <span className="h2">GoodWork</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-collapse-id" />
           <Navbar.Collapse id="navbar-collapse-id">
@@ -49,7 +47,7 @@ export function Navigation() {
               </Nav.Link>
               {user && user.role === "admin" && (
                 <>
-                  <Nav.Link as={Link} to={"/altaproducto"} eventKey={5}>
+                  <Nav.Link as={Link} to={"/gestionproductos"} eventKey={5}>
                     Stock
                   </Nav.Link>
                   <Nav.Link as={Link} to={"/gestioncupones"} eventKey={6}>

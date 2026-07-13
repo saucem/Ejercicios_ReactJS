@@ -1,32 +1,50 @@
 import { Container, Row, Col, Badge, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { db } from "../../firebase/config";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import styles from "./ItemDetail.module.css";
 
 const ItemDetail = () => {
   const { id } = useParams();
   const [producto, setProducto] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/productos.json")
-      .then((respuesta) => {
-        if (!respuesta.ok) {
-          throw new Error("No se pudo cargar la información de los productos");
+    if (!id) return;
+
+    //creamos una consulta = query
+    const queryId = query(
+      //creamos una referencia a la colección productos
+      collection(db, "products"),
+      //sólo los documentos cuyo campo id sea igual al valor recibido
+      where("id", "==", id),
+    );
+
+    //getDocs usa el query
+    getDocs(queryId)
+      .then((resp) => {
+        if (resp.empty) {
+          console.log("No se encontró el producto");
+          return;
         }
-        return respuesta.json();
+        setProducto({
+          ...resp.docs[0].data(),
+        });
       })
-      .then((datos) => {
-        const productoEncontrado = datos.find((prod) => prod.id === id);
-        setProducto(productoEncontrado);
+      .catch((error) => {
+        console.error("Error al cargar el producto:", error);
       })
-      .catch((error) => console.error("Error al cargar el producto:", error));
+      .finally(() => {
+        setLoading(false);
+      });
   }, [id]);
 
   if (!producto) {
-    return <h2>Cargando detalle del producto {id}...</h2>;
+    return <p className="text-light text-center h4">Cargando detalle del producto {id}...</p>;
   }
   if (!producto.id) {
-    return <h2>Producto no encontrado.</h2>;
+    return <p className="text-light h4">Producto no encontrado.</p>;
   }
 
   const price = new Intl.NumberFormat("es-Latn");
@@ -75,9 +93,15 @@ const ItemDetail = () => {
                 )}
               </div>
               <p className="h2">${price.format(producto.precio)}</p>
-              <p className="text-small mb-2">Precio sin impuestos nacionales: ${price.format(netPrice)}</p>
+              <p className="text-small mb-2">
+                Precio sin impuestos nacionales: ${price.format(netPrice)}
+              </p>
               <div className="d-flex align-items-center gap-1">
-                <img src="/images/icons/package_36dp.svg" alt="Icono de caja" className="d-block" />
+                <img
+                  src="/images/icons/package_36dp.svg"
+                  alt="Icono de caja"
+                  className="d-block"
+                />
                 <p className="h6 m-0">Disponibles: {producto.stock}</p>
               </div>
               <hr className="w-100 mb-2 mb-lg-4" />
@@ -85,15 +109,25 @@ const ItemDetail = () => {
               <hr className="w-100 mb-2 mb-lg-4" />
               <div className="d-flex flex-column gap-2 mb-2">
                 <span className="d-flex gap-1 align-items-center">
-                  <img src="/images/icons/local_shipping_36dp.svg" alt="Icono de camión de envíos" />
+                  <img
+                    src="/images/icons/local_shipping_36dp.svg"
+                    alt="Icono de camión de envíos"
+                  />
                   <p className="h6 m-0">Envío GRATIS a partir de $100.000</p>
                 </span>
                 <span className="d-flex gap-1 align-items-center">
-                  <img src="/images/icons/store_front_36dp.svg" alt="Icono de camión de envíos" />
+                  <img
+                    src="/images/icons/store_front_36dp.svg"
+                    alt="Icono de camión de envíos"
+                  />
                   <p className="h6 m-0">Retiro GRATIS en sucursales</p>
                 </span>
               </div>
-              <Button variant="warning" onClick={() => console.log("Added to cart")} className="mt-auto">
+              <Button
+                variant="warning"
+                onClick={() => console.log("Added to cart")}
+                className="mt-auto"
+              >
                 Comprar ahora
               </Button>
             </Col>

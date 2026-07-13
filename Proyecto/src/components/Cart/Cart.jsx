@@ -8,10 +8,6 @@ export function Cart() {
 
   const price = new Intl.NumberFormat("es-Latn");
 
-  //validar si el carrito está vacío:
-  //  en tal caso mostrar el mensaje por defecto
-  //  en caso de que haya productos, mostrarlos como una lista de productos con map
-
   if (cart.length === 0) {
     return (
       <>
