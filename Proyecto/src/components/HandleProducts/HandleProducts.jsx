@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { db } from "../../firebase/config";
 import {
   collection,
@@ -12,42 +12,43 @@ import { toast } from "react-toastify";
 import { Container, Row, Table } from "react-bootstrap";
 import { ProductForm } from "../ProductForm/ProductForm";
 
-const [loading, setLoading] = useState(false);
-const [checkBoxState, setCheckBoxState] = useState(false);
-const [imagenFile, setImagenFile] = useState(null);
-const [editProduct, setEditProduct] = useState(null);
-
-const formInitState = {
-  id: "",
-  destacado: false,
-  detalle: "",
-  nombre: "",
-  precio: "",
-  stock: "",
-  categoria: "",
-  imagen: "",
-};
-const [datosForm, setDatosForm] = useState(formInitState);
-
-const manejarCambio = (evento) => {
-  const { name, value, type, checked } = evento.target;
-
-  let formattedValue = value;
-  if (type === "number") {
-    formattedValue = value === "" ? "" : Number(value);
-  }
-  setDatosForm({
-    ...datosForm,
-    [name]: type === "checkbox" ? checked : value,
-  });
-};
-
-const manejarCambioImagen = (evento) => {
-  setImagenFile(evento.target.files[0]);
-};
-
 const HandleProducts = () => {
+  const [loading, setLoading] = useState(false);
+  const [checkBoxState, setCheckBoxState] = useState(false);
+  const [imagenFile, setImagenFile] = useState(null);
+  const [editProduct, setEditProduct] = useState(null);
+
+  const formInitState = {
+    id: "",
+    destacado: false,
+    detalle: "",
+    nombre: "",
+    precio: "",
+    stock: "",
+    categoria: "",
+    imagen: "",
+  };
+  const [datosForm, setDatosForm] = useState(formInitState);
+
+  const manejarCambio = (evento) => {
+    const { name, value, type, checked } = evento.target;
+
+    let formattedValue = value;
+    if (type === "number") {
+      formattedValue = value === "" ? "" : Number(value);
+    }
+    setDatosForm({
+      ...datosForm,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
+
+  const manejarCambioImagen = (evento) => {
+    setImagenFile(evento.target.files[0]);
+  };
+
   const [productos, setProductos] = useState([]);
+
   const estadoInicialForm = {
     id: "",
     destacado: false,
@@ -164,7 +165,6 @@ const HandleProducts = () => {
 
   return (
     <div className="text-light">
-      <h2>Gestión de Productos</h2>
 
       <ProductForm
         datosForm={datosForm}
@@ -172,64 +172,66 @@ const HandleProducts = () => {
         editMode={editMode}
         manejarCambio={manejarCambio}
         manejarCambioImagen={manejarCambioImagen}
-        manejarCheckbox={manejarCheckbox}
         manejarEnvio={manejarEnvio}
       />
 
-      <Container>
+      <Container className="mb-4">
         <Row>
-          <h3>Lista de Productos</h3>
+          <h3 className="my-4">Lista de Productos</h3>
           <Table hover responsive>
             <thead>
               <tr>
+                <th colSpan={9} className="text-center h3 bg-secondary text-light">Lista de productos</th>
+              </tr>
+              <tr className="border-bottom border-secondary">
                 <th>ID</th>
-                <th>Imagen</th>
+                <th className="text-center">Imagen</th>
                 <th>Nombre</th>
-                <th>Categoría</th>
-                <th>Detalle</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Destacado</th>
+                <th className="text-center">Categoría</th>
+                <th className="text-center">Detalle</th>
+                <th className="text-end">Precio</th>
+                <th className="text-end">Stock</th>
+                <th className="text-center">Destacado</th>
+                <th className="text-center">Acciones</th>
               </tr>
             </thead>
+            <tbody>
+              {productos.map((prod) => (
+                <tr key={prod.fireStoreId}>
+                  <td>{prod.id}</td>
+                  <td className="text-center">
+                    <img
+                      src={prod.imagen}
+                      alt={`Imagen de ${prod.nombre}`}
+                      width={48}
+                    />
+                  </td>
+                  <td>{prod.nombre}</td>
+                  <td className="text-center">{prod.categoria}</td>
+                  <td className="text-center">...</td>
+                  <td className="text-end">{prod.precio}</td>
+                  <td className="text-end">{prod.stock}</td>
+                  <td className="text-center">{prod.destacado ? "Si" : "No"}</td>
+                  <td>
+                    <button
+                      onClick={() => handleDelete(prod.fireStoreId)}
+                      style={{ marginLeft: "10px" }}
+                    >
+                      Eliminar
+                    </button>
+                    <button
+                      onClick={() => handleSelectedProduct(prod)}
+                      style={{ marginLeft: "10px" }}
+                    >
+                      Editar
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </Table>
         </Row>
       </Container>
-      <Table hover>
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-      </Table>
-
-      <ul>
-        {productos.map((prod) => (
-          <li key={prod.id}>
-            {prod.nombre} - ${prod.precio} - FB ID: {prod.fireStoreId}
-            {/*acá agregaremos los botones de acción */}
-            <button
-              onClick={() => handleDelete(prod.fireStoreId)}
-              style={{ marginLeft: "10px" }}
-            >
-              Eliminar
-            </button>
-            <button
-              onClick={() => handleSelectedProduct(prod)}
-              style={{ marginLeft: "10px" }}
-            >
-              Editar
-            </button>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

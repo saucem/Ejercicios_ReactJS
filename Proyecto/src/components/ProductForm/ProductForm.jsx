@@ -7,7 +7,6 @@ export function ProductForm({
   editMode,
   manejarCambio,
   manejarCambioImagen,
-  manejarCheckBox,
   manejarEnvio,
 }) {
   return (
@@ -139,15 +138,11 @@ export function ProductForm({
             </div>
             <div className="col-12 col-md-6 col-lg-3 col-xl-2 mb-2">
               <button className="btn btn-primary w-100" type="submit">
-                {loading ? (
-                  <button className="btn btn-primary w-100" type="submit" disabled>
+                {loading ? 
                     "Guardando..."
-                  </button>
-                ) : (
-                  <button className="btn btn-primary w-100" type="submit">
-                    {editMode ? "Guardar cambios": "Guardar Producto"}
-                  </button>                  
-                )}
+                 : 
+                  editMode ? "Guardar cambios" : "Guardar Producto"
+                }
               </button>
             </div>
           </div>
