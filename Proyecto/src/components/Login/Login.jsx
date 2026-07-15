@@ -18,18 +18,14 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("Usuario logueado:", user);
-        toast.success("¡Iniciaste sesión!", {
-          autoClose:3000,
-          position: "bottom-right"
-        })
+        toast.success("¡Iniciaste sesión!", {autoClose:3000})
         navigate(-1); //
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error("Error en el login:", errorCode, errorMessage);
-        //alert("Error: " + errorMessage);
-        toast.error("Error: " + errorMessage, {autoClose: 5000}
+        toast.error("Error: " + errorMessage, {autoClose: 3000}
         )
       });
   };

@@ -5,7 +5,8 @@ import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children, rolesPermitidos }) => {
   const { user, loading } = useAuth();
-  // Mientras se verifica el estado de autenticación, mostramos un mensaje de carga.src/componentes/ProtectedRoute/PotectedRoute.jsx
+  console.log(user, user.role)
+  // Mientras se verifica el estado de autenticación, mostramos un mensaje de carga.
   // Esto es crucial para no redirigir al login prematuramente en una recarga de página.
   if (loading) {
     return <div>Cargando...</div>;
@@ -14,7 +15,6 @@ const ProtectedRoute = ({ children, rolesPermitidos }) => {
   if (!user || (rolesPermitidos && !rolesPermitidos.includes(user.role))) {
     return <Navigate to="/login" />;
   }
-
   // Si hay un usuario, renderizamos el componente hijo que está siendo protegido.
   return <> {children} </>;
 };
