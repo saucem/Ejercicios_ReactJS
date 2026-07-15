@@ -8,6 +8,7 @@ export function ProductForm({
   manejarCambio,
   manejarCambioImagen,
   manejarEnvio,
+  manejarCancelar
 }) {
   return (
     <>
@@ -32,12 +33,13 @@ export function ProductForm({
                 value={datosForm.nombre}
                 onChange={manejarCambio}
                 className="form-control"
+                required
               />
             </div>
             <div className="w-100 d-block d-lg-none"></div>
             <div className="mb-3 col-sm-4 col-lg-2">
               <label htmlFor="id" className="form-label">
-                id
+                SKU
               </label>
               <input
                 type="number"
@@ -46,6 +48,7 @@ export function ProductForm({
                 value={datosForm.id}
                 onChange={manejarCambio}
                 className="form-control"
+                required
               />
             </div>
             <div className="mb-3 col-sm-4 col-lg-2">
@@ -85,6 +88,7 @@ export function ProductForm({
                 name="imagen"
                 onChange={manejarCambioImagen}
                 className="form-control"
+                required
               />
             </div>
             <div className="w-100 d-block d-lg-none"></div>
@@ -99,6 +103,7 @@ export function ProductForm({
                 value={datosForm.categoria}
                 onChange={manejarCambio}
                 className="form-control"
+                required
               />
             </div>
             <div className="mb-3 col-sm-3 col-lg-2 d-flex justify-content-md-end align-items-end">
@@ -132,7 +137,7 @@ export function ProductForm({
           </div>
           <div className="row justify-content-end mt-4">
             <div className="col-12 col-md-6 col-lg-3 col-xl-2 mb-2">
-              <button className="btn btn-secondary w-100" type="button">
+              <button className="btn btn-secondary w-100" type="button" onClick={manejarCancelar}>
                 Cancelar
               </button>
             </div>

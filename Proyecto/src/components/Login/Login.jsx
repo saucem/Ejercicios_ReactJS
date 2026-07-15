@@ -17,7 +17,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log("Usuario logueado:", user);
+        console.log("Usuario logueado:", user.email);
         toast.success("¡Iniciaste sesión!", {autoClose:3000})
         navigate(-1); //
       })

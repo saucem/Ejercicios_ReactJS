@@ -4,7 +4,7 @@ import { db } from "../../firebase/config.js";
 import { collection, getDocs } from "firebase/firestore";
 import styles from "./ItemListContainer.module.css";
 
-export function ItemListContainer({ Mensaje, Destacados }) {
+export function ItemListContainer({ Mensaje, Destacados, ShowBanner }) {
   const [productos, setProductos] = useState([]);
   const [error, setError] = useState(null);
   const [cargando, setCargando] = useState(true);
@@ -39,10 +39,14 @@ export function ItemListContainer({ Mensaje, Destacados }) {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.sectionTitle}>
-          <h1>{Mensaje}</h1>
-        </div>
-        <div className={styles.sectionContent}>
+        { ShowBanner ?
+          <div className={styles.sectionTitle}>
+            <h1>{Mensaje}</h1>
+          </div>
+          :
+          <h1 className="text-light h2 my-4">{Mensaje}</h1>
+        }
+        <div className={`${styles.sectionContent} rounded-2`}>
           <ItemList productos={productosAMostrar} />
         </div>
       </div>

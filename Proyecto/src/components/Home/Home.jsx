@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { ItemListContainer } from "../ItemListContainer/ItemListContainer";
 import styles from "../Home/Home.module.css"
 
 function Home() {
@@ -11,9 +13,13 @@ function Home() {
             </span>
             <span className={styles.heroSubtitle}>
               Productos de madera natural proveniente de bosques reforestados que se integran orgánicamente en tu hogar
-            </span>      
+            </span>
+            <Link to={"/productos"} className="btn btn-lg btn-warning align-self-start mt-4">Explorar productos</Link>
           </div>
         </div>
+      </div>
+      <div className="container above-the-fold">
+        <ItemListContainer Mensaje={"Nuestra selección del mes"} Destacados={true}/>
       </div>
     </>
   );

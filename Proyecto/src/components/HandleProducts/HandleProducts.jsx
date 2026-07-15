@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { db } from "../../firebase/config";
 import {
   collection,
@@ -11,6 +11,8 @@ import {
 import { toast } from "react-toastify";
 import { Container, Row, Table } from "react-bootstrap";
 import { ProductForm } from "../ProductForm/ProductForm";
+import { BsTrash, BsPencil } from "react-icons/bs";
+import Swal from "sweetalert2"
 
 const HandleProducts = () => {
   const [loading, setLoading] = useState(false);
@@ -65,7 +67,6 @@ const HandleProducts = () => {
     setProductos(
       resp.docs.map((doc) => ({ ...doc.data(), fireStoreId: doc.id })),
     );
-    console.log(productos);
   };
 
   useEffect(() => {
@@ -94,6 +95,21 @@ const HandleProducts = () => {
   };
 
   const editMode = editProduct !== null;
+
+  const manejarCancelar = () => {
+    setDatosForm(formInitState);
+    setImagenFile(null);
+    setEditProduct(null);
+    setLoading(false);
+  };
+
+  const mostrarDetalle = (product) => {
+    Swal.fire({
+      title: product.nombre,
+      text: product.detalle,
+      confirmButtonText: "Cerrar"
+    })
+  };
 
   const manejarEnvio = async (evento) => {
     evento.preventDefault();
@@ -150,9 +166,7 @@ const HandleProducts = () => {
       toast.success("Datos guardados", { autoClose: 2000 });
 
       await getProducts();
-      setDatosForm(formInitState);
-      setImagenFile(null);
-      setEditProduct(null);
+      manejarCancelar();
     } catch (error) {
       console.error("Error en el proceso de envío: ", error);
       toast.error(
@@ -165,7 +179,6 @@ const HandleProducts = () => {
 
   return (
     <div className="text-light">
-
       <ProductForm
         datosForm={datosForm}
         loading={loading}
@@ -173,6 +186,7 @@ const HandleProducts = () => {
         manejarCambio={manejarCambio}
         manejarCambioImagen={manejarCambioImagen}
         manejarEnvio={manejarEnvio}
+        manejarCancelar={manejarCancelar}
       />
 
       <Container className="mb-4">
@@ -181,10 +195,15 @@ const HandleProducts = () => {
           <Table hover responsive>
             <thead>
               <tr>
-                <th colSpan={9} className="text-center h3 bg-secondary text-light">Lista de productos</th>
+                <th
+                  colSpan={9}
+                  className="text-center h3 bg-secondary text-light"
+                >
+                  Lista de productos
+                </th>
               </tr>
               <tr className="border-bottom border-secondary">
-                <th>ID</th>
+                <th>SKU</th>
                 <th className="text-center">Imagen</th>
                 <th>Nombre</th>
                 <th className="text-center">Categoría</th>
@@ -208,22 +227,33 @@ const HandleProducts = () => {
                   </td>
                   <td>{prod.nombre}</td>
                   <td className="text-center">{prod.categoria}</td>
-                  <td className="text-center">...</td>
+                  <td className="text-center">
+                    <button
+                      className="btn btn-sm btn-outline-info"
+                      onClick={() => mostrarDetalle(prod)}
+                    >
+                      Ver
+                    </button>
+                  </td>
                   <td className="text-end">{prod.precio}</td>
                   <td className="text-end">{prod.stock}</td>
-                  <td className="text-center">{prod.destacado ? "Si" : "No"}</td>
-                  <td>
-                    <button
-                      onClick={() => handleDelete(prod.fireStoreId)}
-                      style={{ marginLeft: "10px" }}
-                    >
-                      Eliminar
-                    </button>
+                  <td className="text-center">
+                    {prod.destacado ? "Si" : "No"}
+                  </td>
+                  <td className="text-center">
                     <button
                       onClick={() => handleSelectedProduct(prod)}
-                      style={{ marginLeft: "10px" }}
+                      className="btn btn-sm btn-outline-primary me-md-2"
                     >
+                      <BsPencil className="me-1" />
                       Editar
+                    </button>
+                    <button
+                      onClick={() => handleDelete(prod.fireStoreId)}
+                      className="btn btn-sm btn-outline-danger"
+                    >
+                      <BsTrash className="me-1" />
+                      Eliminar
                     </button>
                   </td>
                 </tr>

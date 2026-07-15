@@ -21,7 +21,7 @@ function App() {
         <Route path='/nosotros' element={<Directory />} />
         <Route path='/productos' element={<ItemListContainer Mensaje={"Productos"} Destacados={false} />} />
         <Route path='/productos/:id' element={<ItemDetail />} />
-        <Route path='/destacados' element={<ItemListContainer Mensaje={"Productos Destacados"} Destacados={true}/>} />
+        <Route path='/destacados' element={<ItemListContainer Mensaje={"Productos Destacados"} Destacados={true} ShowBanner={true}/>} />
         <Route path='/gestionproductos' element={
           <ProtectedRoute rolesPermitidos={["admin"]}>
             <HandleProducts />
