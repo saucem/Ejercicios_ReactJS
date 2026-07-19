@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
 import styles from "./Cart.module.css";
 import { useCart } from "../../context/CartContext";
-import { Table } from "react-bootstrap";
+import { Table, Container, Row, Col } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 export function Cart() {
   const { cart, clearCart, getCartTotal, removeItem } = useCart();
 
   const price = new Intl.NumberFormat("es-Latn");
+
+  const completePayment = () => {
+    Swal.fire(
+      "Compra exitosa!",
+      "En unos instantes recibirás un correo con toda la información de tu compra",
+      "success",
+    );
+    clearCart();
+  };
 
   if (cart.length === 0) {
     return (
@@ -61,17 +71,22 @@ export function Cart() {
                 <td>${price.format(item.precio)}</td>
                 <td>${price.format(item.precio * item.quantity)}</td>
                 <td className="text-center">
-                  <button onClick={""} className="action-link">
-                    <img 
+                  <button onClick={null} className="action-link">
+                    <img
                       src="/images/icons/edit_48dp.svg"
                       alt="Imagen de lápiz de edición"
-                      width={24} />
+                      width={24}
+                    />
                   </button>
-                  <button onClick={() => removeItem(item.id)} className="action-link">
-                    <img 
+                  <button
+                    onClick={() => removeItem(item.id)}
+                    className="action-link"
+                  >
+                    <img
                       src="/images/icons/delete_48dp.svg"
                       alt="Imagen de cesto de basura"
-                      width={24} />
+                      width={24}
+                    />
                   </button>
                 </td>
               </tr>
@@ -80,9 +95,23 @@ export function Cart() {
         </Table>
         <hr />
         <h3>Total a pagar: ${getCartTotal()}</h3>
-        <button className="btn btn-danger mb-2" onClick={clearCart}>
-          Vaciar carrito
-        </button>
+        <Container>
+          <Row className="justify-content-center">
+            <Col xs={12} md="auto">
+              <button
+                className="btn btn-outline-danger mb-2"
+                onClick={clearCart}
+              >
+                Vaciar carrito
+              </button>
+            </Col>
+            <Col xs={12} md="auto">
+              <button className="btn btn-success mb-2" onClick={completePayment}>
+                Completar la compra
+              </button>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </>
   );
