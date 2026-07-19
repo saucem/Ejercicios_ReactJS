@@ -1,14 +1,22 @@
 import { Container, Row, Col, Badge, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useCart } from "../../context/CartContext";
 import { db } from "../../firebase/config";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import styles from "./ItemDetail.module.css";
+import { toast } from "react-toastify";
 
 const ItemDetail = () => {
   const { id } = useParams();
   const [producto, setProducto] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [cartQty, setCartQty] = useState(1);
+  const { addToCart, getCurrentQuantity } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(producto, cartQty);
+  };
 
   useEffect(() => {
     if (!id) return;
@@ -41,7 +49,11 @@ const ItemDetail = () => {
   }, [id]);
 
   if (!producto) {
-    return <p className="text-light text-center h4">Cargando detalle del producto {id}...</p>;
+    return (
+      <p className="text-light text-center h4">
+        Cargando detalle del producto {id}...
+      </p>
+    );
   }
   if (!producto.id) {
     return <p className="text-light h4">Producto no encontrado.</p>;
@@ -125,7 +137,10 @@ const ItemDetail = () => {
               </div>
               <Button
                 variant="warning"
-                onClick={() => console.log("Added to cart")}
+                onClick={() => {
+                  handleAddToCart()
+                  toast.success("Agregaste el producto a tu carrito!", {autoClose:2000})
+                }}
                 className="mt-auto"
               >
                 Comprar ahora
